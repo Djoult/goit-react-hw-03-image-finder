@@ -1,13 +1,14 @@
 import React from 'react';
 import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
+import { Ul } from './ImageGallery.styled';
 
 const ImageGallery = ({ pictures }) => {
   return (
-    <ul className="gallery">
+    <Ul className="gallery">
       {pictures.map(el => (
         <ImageGalleryItem el={el} key={el.id} />
       ))}
-    </ul>
+    </Ul>
   );
 };
 

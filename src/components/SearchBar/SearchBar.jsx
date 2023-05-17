@@ -6,7 +6,9 @@ import {
   Header,
   SearchFormLabel,
 } from './SearchBar.styled';
-import { FcSearch } from 'react-icons/fc';
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class SearchBar extends Component {
   state = { value: '' };
@@ -15,7 +17,13 @@ class SearchBar extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    if (this.state.value.trim() === '') {
+      this.setState({ searchQuery: '' });
+      toast.info('Enter yor search request.');
+      return;
+    }
     this.props.handleSearch(this.state.value);
+    this.setState({ value: '' });
   };
   render() {
     return (
