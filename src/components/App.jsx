@@ -17,7 +17,7 @@ export class App extends Component {
     page: 1,
     loading: false,
     isShowButton: false,
-    isShowModal: false,
+    // isShowModal: false,
     error: false,
   };
 
