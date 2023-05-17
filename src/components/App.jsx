@@ -92,7 +92,7 @@ export class App extends Component {
   };
 
   render() {
-    const { error, pictures, loading, isShowButton, isShowModal } = this.state;
+    const { error, pictures, loading, isShowButton } = this.state;
     return (
       <>
         <SearchBar handleSearch={this.handleSearch} />
