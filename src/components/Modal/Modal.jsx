@@ -12,21 +12,15 @@ export class Modal extends Component {
   };
 
   componentDidMount() {
-    document.addEventListener('keydown', this.handleEscKeydown);
-
-    document.documentElement.style.overflow = 'hidden';
+    document.addEventListener('keydown', this.handlKeyDown);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleEscKeydown);
-
-    document.documentElement.style.overflow = 'unset';
+    document.removeEventListener('keydown', this.handlKeyDown);
   }
 
-  handleEscKeydown = e => {
-    const KEY_CODE = 'Escape';
-
-    if (e.key === KEY_CODE) {
+  handlKeyDown = e => {
+    if (e.key === 'Escape') {
       this.props.onClose();
     }
   };
