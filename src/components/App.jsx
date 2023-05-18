@@ -17,7 +17,6 @@ export class App extends Component {
     page: 1,
     loading: false,
     isShowButton: false,
-    // isShowModal: false,
     error: false,
   };
 
@@ -58,12 +57,6 @@ export class App extends Component {
   }
   onError = () => {
     this.setState({ error: true, loading: false, isShowButton: false });
-  };
-  openModal = (src, alt) => {
-    this.setState({ isShowModal: true });
-  };
-  closeModal = () => {
-    this.setState({ isShowModal: false });
   };
 
   handleSearch = searchText => {
