@@ -2,7 +2,6 @@ import { Component } from 'react';
 
 import { ToastContainer, toast } from 'react-toastify';
 import SearchBar from './SearchBar/SearchBar';
-// import ContentInfo from './ContentInfo/ContentInfo';
 import Loader from './Loader/Loader';
 import { Button } from './Button/Button';
 import ImageGallery from './ImageGallery/ImageGallery';
@@ -26,10 +25,7 @@ export class App extends Component {
       prevState.page !== this.state.page
     ) {
       try {
-        this.setState({ loading: true });
-        this.setState({
-          isShowButton: true,
-        });
+        this.setState({ loading: true, isShowButton: true });
         const response = await fetchPictures(
           this.state.searchText,
           this.state.page
@@ -40,7 +36,7 @@ export class App extends Component {
               ? response.hits
               : [...prevState.pictures, ...response.hits],
         });
-        if (response.quantity === 0) {
+        if (response.total === 0) {
           throw new Error('Sorry, no images found');
         }
         if (response.totalHits <= this.state.page * perPage) {
@@ -49,7 +45,9 @@ export class App extends Component {
           });
         }
       } catch (error) {
-        this.setState({ error });
+        console.log(error);
+
+        this.setState({ error: error.message });
       } finally {
         this.setState({ loading: false });
       }
@@ -75,7 +73,6 @@ export class App extends Component {
     }
 
     this.setState({ ...initialStateParams, searchText });
-    // this.setState({ searchText });
   };
 
   handleLoadMore = () => {

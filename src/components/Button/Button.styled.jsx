@@ -3,13 +3,15 @@ import styled from '@emotion/styled';
 export const LoadMoreBtn = styled.button`
   display: block;
   /* width: fit-content; */
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 8px auto;
   padding: 8px 16px;
   border-radius: 2px;
   background-color: #3f51b5;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
-  display: inline-block;
   color: #fff;
   border: 0;
   text-decoration: none;
@@ -26,5 +28,6 @@ export const LoadMoreBtn = styled.button`
   :hover,
   :focus {
     background-color: #303f9f;
+    color: #000000;
   }
 `;

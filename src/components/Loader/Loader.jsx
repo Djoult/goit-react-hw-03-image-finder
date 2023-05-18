@@ -1,16 +1,19 @@
 import { Dna } from 'react-loader-spinner';
+import { DnaWrapper } from './Loader.styled';
 
 const Loader = () => {
   return (
-    <Dna
-      height="60"
-      width="60"
-      //   color="#232caa"
-      //   ariaLabel="tail-spin-loading"
-      //   radius="1"
-      wrapperStyle={{ margin: '0 auto' }}
-      //   visible={visible}
-    />
+    <DnaWrapper>
+      <Dna
+        height="90"
+        width="90"
+        //   color="#232caa"
+        //   ariaLabel="tail-spin-loading"
+        //   radius="1"
+        //   visible={visible}
+        // wrapperStyle={{ margin: '0 auto' }}
+      />
+    </DnaWrapper>
   );
 };
 // import React from 'react';
