@@ -16,10 +16,22 @@ import {
   Link,
 } from './ImageGalleryItem.styled';
 import { Modal } from 'components/Modal/Modal';
+import PropTypes from 'prop-types';
 
 export class ImageGalleryItem extends Component {
   state = {
     isShowModal: false,
+  };
+  static propTypes = {
+    el: PropTypes.shape({
+      webformatURL: PropTypes.string.isRequired,
+      tags: PropTypes.string.isRequired,
+      largeImageURL: PropTypes.string.isRequired,
+      likes: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired,
+      comments: PropTypes.number.isRequired,
+      downloads: PropTypes.number.isRequired,
+    }).isRequired,
   };
 
   handleModalOpen = () => {

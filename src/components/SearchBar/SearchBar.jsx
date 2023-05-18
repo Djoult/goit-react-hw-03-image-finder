@@ -9,9 +9,14 @@ import {
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PropTypes from 'prop-types';
 
 class SearchBar extends Component {
   state = { value: '' };
+
+  static propTypes = {
+    handleSearch: PropTypes.func.isRequired,
+  };
 
   handleChange = ({ target: { value } }) => this.setState({ value });
 
